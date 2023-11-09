@@ -12,9 +12,9 @@ import { ShareDataService } from '../services/shared-data.service';
 export class Tab2Page implements OnInit{
   pokemonDataTab2: any;
   pokemonImageUrl: any;
-  numberOfAbilitiesTab2: any;
-  numberOfAbilitiesTab1: any;
-  comparisonResult: any;
+  numberOfAbilitiesTab2!: number;
+  numberOfAbilitiesTab1!: number;
+  comparisonResult!: string;
   comparisonColor: any;
 
 
@@ -28,7 +28,14 @@ export class Tab2Page implements OnInit{
   }
 
   getPokemonDataTab2 (){
+      const randomPokemonID = Math.floor(Math.random()*100);
+      const apiUrl = `https://pokeapi.co/api/v2/pokemon/${randomPokemonID}/`
 
+      this.http.get(apiUrl).subscribe((data: any) => {
+        this.pokemonDataTab2 = data;
+        this.numberOfAbilitiesTab2 = data.abilities.length;
+        this.compareAbilities();
+      })
   }
 
   compareAbilities(){
