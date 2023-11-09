@@ -5,9 +5,9 @@ import { Injectable } from "@angular/core";
 })
 
 export class ShareDataService {
-    private numberOfAbilititesTab1: any;
+    private numberOfAbilititesTab1!: number;
 
-    setNumberOfAbilitiesTab1 (value: any){
+    setNumberOfAbilitiesTab1 (value: number){
         this.numberOfAbilititesTab1 = value;
     }
     getNumberOfAbilitiesTab1(){
