@@ -26,12 +26,7 @@
       placeholder="22555888"
       type="text"
     ></ion-input>
-    <ion-button
-      expand="block"
-      fill="solid"
-      (click) = "buscarPokemon()"
-    >
-      Buscar por Pokemon
+    <ion-button expand="block" fill="solid" (click) = "buscarPokemon()">Buscar por Pokemon
       <ion-icon name="search" slot="end"></ion-icon>
     </ion-button>
   </ion-card-header>
@@ -50,24 +45,24 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{'bulbasaur' | uppercase }}</ion-card-title>
-      <ion-img alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg">
-      </ion-img>
+      <ion-card-title>{{ pokemonDataTab1['name'] | uppercase }}</ion-card-title>
+      <ion-img alt="" src="{{ pokemonDataTab1['front_default'] }}"></ion-img>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>Abilities: 2</ion-label>
+          <ion-label>Abilities: {{ pokemonDataTab1['abilities'] }}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Heitgh: 7</ion-label>
+          <ion-label>Height: {{ pokemonDataTab1['height'] }}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Weight: 69</ion-label>
+          <ion-label>Weight: {{ pokemonDataTab1['weight'] }}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
+
 </ion-content>
 
 
