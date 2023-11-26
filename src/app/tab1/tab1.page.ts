@@ -52,13 +52,19 @@ export class Tab1Page {
       this.pokemonDataTab1.weight = JSON.parse(JSON.stringify(value))['weight'];
       //
       this.shareDataService.setNumberOfAbilitiesTab1(this.pokemonDataTab1.abilities);
-      
-    });
-    
+
+      this.shareDataService.setCapturedPokemon({
+        name: this.pokemonDataTab1.name,
+        abilities: this.pokemonDataTab1.abilities,
+        front_default: this.pokemonDataTab1.front_default,
+        height: this.pokemonDataTab1.height,
+        weight: this.pokemonDataTab1.weight
+      });      
+      this.shareDataService.addPokemonToPokedex();
+    });    
   }
   numberOfAbilitiesTab1 = this.pokemonDataTab1.abilities;
-
-  
+ 
 }
 
 
